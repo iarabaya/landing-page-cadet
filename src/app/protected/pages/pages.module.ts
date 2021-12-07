@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
+import { HomeComponent } from './home/home.component';
 import { TripListComponent } from './trip-list/trip-list.component';
-import { LoginComponent } from './login/login.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
     HistoryComponent,
-    TripListComponent,
-    LoginComponent
+    HomeComponent,
+    TripListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }

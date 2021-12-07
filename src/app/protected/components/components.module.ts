@@ -14,6 +14,11 @@ import { TripComponent } from './trip/trip.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    HeaderComponent,
+    FooterComponent,
+    TripComponent
   ]
 })
 export class ComponentsModule { }
