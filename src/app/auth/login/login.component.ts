@@ -35,7 +35,8 @@ export class LoginComponent {
       if(res.id){
         localStorage.setItem('email', this.user.email);
         localStorage.setItem('roleId', JSON.stringify(res.rol.id));
-        this.router.navigateByUrl('dashboard/home');
+        localStorage.setItem('userId', JSON.stringify(res.id));
+        this.router.navigateByUrl('dashboard/triplist');
       }
     },
     error => {
