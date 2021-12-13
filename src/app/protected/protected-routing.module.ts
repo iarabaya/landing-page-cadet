@@ -10,10 +10,9 @@ const routes: Routes = [
     children:[
       {path:'home', component: HomeComponent},
       {path:'history', component: HistoryComponent},
-      {path:'trip-list', component: TripListComponent},
-      {path:'**', component: HomeComponent}
+      {path:'triplist', component: TripListComponent},
     ]
-  }
+  },
 ];
 
 @NgModule({

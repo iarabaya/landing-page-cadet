@@ -1,1 +1,22 @@
-<p>trip works!</p>
+<mat-card *ngIf="item" class="card">
+  <mat-card-title>{{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].equipment.cliente.address}}</mat-card-title>
+  <mat-card-subtitle>{{item.creationDate | date: 'shortTime'}} </mat-card-subtitle>
+  <mat-card-content>
+    <p>{{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].equipment.mark}} {{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].equipment.model}}</p>
+    <h2> {{item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].statusTravel.toString() | i18nSelect: envioMap}}</h2>
+  </mat-card-content>
+  <mat-card-actions>
+
+    <button mat-mini-fab color="primary" aria-label="Mano">
+      <mat-icon>pan_tool</mat-icon>
+    </button>
+
+    <button mat-mini-fab color="accent" aria-label="Aceptar">
+      <mat-icon>done_outline</mat-icon>
+    </button>
+
+    <button mat-mini-fab color="warn" aria-label="Renunciar">
+      <mat-icon>highlight_off</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

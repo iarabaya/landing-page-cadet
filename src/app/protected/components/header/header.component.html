@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>TODO IT</span>
+      <span class="example-spacer"></span>
+      <button type="button" [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      </mat-toolbar-row> 
+    </mat-toolbar>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/dashboard/home">Inicio</button>
+      <button mat-menu-item routerLink="/dashboard/triplist">Lista de Viajes</button>
+      <button mat-menu-item routerLink="/dashboard/history">Historial</button>
+      <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
+    </mat-menu>       
+</header>
+

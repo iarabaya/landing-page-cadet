@@ -4,6 +4,7 @@ import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { ComponentsModule } from '../components/components.module';
+import { MaterialModule } from '../../material.module';
 
 
 
@@ -15,7 +16,8 @@ import { ComponentsModule } from '../components/components.module';
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    MaterialModule
   ]
 })
 export class PagesModule { }

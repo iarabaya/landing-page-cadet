@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { TripComponent } from './trip/trip.component';
+
+import { AppRoutingModule } from '../../app-routing.module';
+import { MaterialModule } from 'src/app/material.module';
+import { ProtectedRoutingModule } from '../protected-routing.module';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent,
-    TripComponent
+    TripComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    ProtectedRoutingModule
   ],
   exports:[
     HeaderComponent,
-    FooterComponent,
-    TripComponent
+    TripComponent,
   ]
 })
 export class ComponentsModule { }

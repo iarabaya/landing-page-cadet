@@ -1,2 +1,20 @@
 <app-header></app-header>
-<p>trip-list works!</p>
+<div class="main">
+  <h1>Viajes</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Tipos de Viajes</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="disponibles" (click)="getTravels(selected)">Viajes Disponibles / Pendientes</mat-option>
+      <mat-option value="aceptados" (click)="getTravels(selected)">Viajes en Curso / Aceptados</mat-option>
+      <mat-option value="en curso" (click)="getTravels(selected)">Viajes en Curso</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- <p>You selected: {{selected}}</p> -->
+  <div *ngIf="results">
+    <h1>Resultados</h1>
+    <hr>
+      <app-trip  *ngFor="let item of results" [item]="item"></app-trip>
+  </div>
+</div>
+
+<!-- <app-tab-bar></app-tab-bar> -->
