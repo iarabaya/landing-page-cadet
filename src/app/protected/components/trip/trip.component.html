@@ -11,6 +11,7 @@
     mat-mini-fab 
     color="primary" 
     aria-label="Mano" 
+    type="button"
     (click)="acceptTravel()">
       <mat-icon>pan_tool</mat-icon>
     </button>
@@ -19,6 +20,7 @@
     *ngIf="item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].statusTravel === 1 ||item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].statusTravel === 2" 
     mat-mini-fab color="accent" 
     aria-label="Aceptar" 
+    type="button"
     (click)="onTravel()">
       <mat-icon>done_outline</mat-icon>
     </button>
@@ -27,6 +29,7 @@
     *ngIf="item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].statusTravel === 2 || item.travelEquipmentDTOs[item.travelEquipmentDTOs.length - 1].statusTravel === 6" 
     mat-mini-fab color="warn" 
     aria-label="Renunciar" 
+    type="button"
     (click)="cancelTravel()">
       <mat-icon>highlight_off</mat-icon>
     </button>

@@ -56,7 +56,6 @@ export class TravelService {
     forkJoin([status3, status7]).subscribe( res => {
       const newResults: TravelResponse[] = [...res[0], ...res[1]]
       this._results = this.filterByCadet(newResults);
-      // console.log(newResults)
       console.log(this._results);
       
     })

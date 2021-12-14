@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { I18nSelectPipe } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 import { TravelService } from '../../services/travel.service';
 @Component({
@@ -7,7 +6,7 @@ import { TravelService } from '../../services/travel.service';
   templateUrl: './trip-list.component.html',
   styleUrls: ['./trip-list.component.scss']
 })
-export class TripListComponent {
+export class TripListComponent implements OnInit{
   selected = 'disponibles';
 
   envioMap = {
@@ -28,6 +27,10 @@ export class TripListComponent {
   }
 
   constructor(private travelService: TravelService){ }
+
+  ngOnInit(): void {
+      this.getTravels(this.selected);
+  }
 
   getTravels(selected: string){
     let statusString: string;

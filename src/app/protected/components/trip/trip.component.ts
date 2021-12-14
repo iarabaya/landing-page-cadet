@@ -31,13 +31,14 @@ export class TripComponent {
   }
   
   constructor(private travelService: TravelService){
-   console.log(this.item)
+  //  console.log(this.item)
   }
 
   acceptTravel(){ 
     this.travelService.postTravel(this.item.id, 2, this.userId, this.userId, false, 'viaje tomado' ).subscribe( res => {
       if(res.id){
         Swal.fire('Viaje Aceptado', `${res.creationDate}`, 'success');
+        this.travelService.getAvailableTravels(2);
       }else{
         Swal.fire('Error', res , 'error');
       }
@@ -48,6 +49,7 @@ export class TripComponent {
     this.travelService.postTravel(this.item.id, 3, this.userId, this.userId, false, 'en viaje' ).subscribe( res => {
       if(res.id){
         Swal.fire('Viaje en Curso', `${res.creationDate}`, 'success');
+        this.travelService.getAvailableTravels(2);
       }else{
         Swal.fire('Error', res , 'error');
       }
@@ -58,6 +60,7 @@ export class TripComponent {
     this.travelService.postTravel(this.item.id, 10, this.userId, this.userId, true, 'renunciado' ).subscribe( res => {
       if(res.id){
         Swal.fire('Viaje Renunciado correctamente', `${res.creationDate}`, 'success');
+        this.travelService.getAcceptedTravels(2);
       }else{
         Swal.fire('Error', res , 'error');
       }
